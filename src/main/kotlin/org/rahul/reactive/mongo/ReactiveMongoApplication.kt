@@ -12,6 +12,7 @@ import org.springframework.core.io.ClassPathResource
 import org.springframework.data.mongodb.config.AbstractReactiveMongoConfiguration
 import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories
 import org.springframework.stereotype.Component
+import reactor.kotlin.core.publisher.toFlux
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
@@ -48,10 +49,11 @@ class Driver(val repository: ReactivePlayerRepository) : CommandLineRunner {
             if (playerCount == 0L) {
                 val res = ClassPathResource("players.txt")
                 val reader = BufferedReader(InputStreamReader(res.inputStream))
-                reader.lines().forEach { line ->
+                val playersFlux = reader.lines().map { line ->
                     val split = line.split(" ")
-                    repository.save(Player(null, split[0], split[1])).subscribe()
-                }
+                    Player(null, split[0], split[1])
+                }.toFlux()
+                repository.saveAll(playersFlux)
             }
         }
     }
