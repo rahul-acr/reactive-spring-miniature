@@ -12,10 +12,12 @@ import org.springframework.core.io.ClassPathResource
 import org.springframework.data.mongodb.config.AbstractReactiveMongoConfiguration
 import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories
 import org.springframework.stereotype.Component
+import org.springframework.web.reactive.config.EnableWebFlux
 import reactor.kotlin.core.publisher.toFlux
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
+@EnableWebFlux
 @SpringBootApplication
 class ReactiveMongoApplication
 
