@@ -5,5 +5,4 @@ import org.springframework.data.repository.reactive.ReactiveCrudRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface ReactivePlayerRepository : ReactiveCrudRepository<Player, String> {
-}
+interface ReactivePlayerRepository : ReactiveCrudRepository<Player, String>
