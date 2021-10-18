@@ -1,7 +1,7 @@
-package org.rahul.reactive.mongo
+package org.rahul.reactive.miniature
 
-import org.rahul.reactive.mongo.document.Player
-import org.rahul.reactive.mongo.repository.ReactivePlayerRepository
+import org.rahul.reactive.miniature.document.Player
+import org.rahul.reactive.miniature.repository.ReactivePlayerRepository
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -24,7 +24,7 @@ fun main(args: Array<String>) {
 
 
 @Component
-class Driver(val repository: ReactivePlayerRepository) : CommandLineRunner {
+class StaticDataLoader(val repository: ReactivePlayerRepository) : CommandLineRunner {
 
     override fun run(vararg args: String?) {
         repository.count().subscribe { playerCount ->

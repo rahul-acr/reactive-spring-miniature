@@ -1,7 +1,7 @@
-package org.rahul.reactive.mongo.api
+package org.rahul.reactive.miniature.api
 
-import org.rahul.reactive.mongo.document.Player
-import org.rahul.reactive.mongo.repository.ReactivePlayerRepository
+import org.rahul.reactive.miniature.document.Player
+import org.rahul.reactive.miniature.repository.ReactivePlayerRepository
 import org.reactivestreams.Publisher
 import org.springframework.web.bind.annotation.*
 

@@ -1,4 +1,4 @@
-package org.rahul.reactive.mongo.document
+package org.rahul.reactive.miniature.document
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document

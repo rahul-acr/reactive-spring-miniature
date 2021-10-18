@@ -1,6 +1,6 @@
-package org.rahul.reactive.mongo.repository
+package org.rahul.reactive.miniature.repository
 
-import org.rahul.reactive.mongo.document.Player
+import org.rahul.reactive.miniature.document.Player
 import org.springframework.data.repository.reactive.ReactiveCrudRepository
 import org.springframework.stereotype.Repository
 
